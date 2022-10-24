@@ -1,0 +1,52 @@
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+* { outline: 0; padding: 0; margin: 0; border: 0; }
+
+.cardComponent{
+    cursor: pointer;
+}
+.cardComponent:hover{
+    background-color: #d9ebe7
+}
+#player{
+    font-size: 14px;
+}
+#card{
+    font-size: 10px;
+    
+   
+}
+#card:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#cards:hover{
+    color: red;
+}
+
+#songHeader{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+#homePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.playButton:hover{
+    opacity: 80%;
+}
+.playButton{
+    cursor: pointer;
+}
+
