@@ -60,9 +60,6 @@ function Player(props) {
         }, 100)
         audioElement.current.currentTime = rangeValue;
 
-
-
-
     }, [rangeValue])
 
     useEffect(() => {
@@ -72,26 +69,17 @@ function Player(props) {
     }, [currentTime])
 
 
-
-    function millisToMinutesAndSeconds(millis) {
-        var minutes = Math.floor(millis / 60000);
-        var seconds = ((millis % 60000) / 1000).toFixed(0);
-        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-    }
-
-
-
     return (
         <div id='player' className=' h-25 border-top d-flex flex-column justify-content-center align-items-center ' >
             <audio ref={audioElement} src={props.songUrl} />
             <div className='w-50 d-flex justify-content-center '>
-                <span className='me-2'>{currentTime ? currentTime : 0.00}</span>
+                <span className='me-2'> {Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60)}</span>
                 <Form.Range defaultValue={currentTime} ref={clickRef} max={duration} min={0} value={currentTime}
                     onChange={e => {
                         setRangeValue(e.target.value)
                     }}
                 />
-                <span className='ms-2'>{duration}</span>
+                <span className='ms-2'>{Math.floor(duration / 60)}:{Math.floor(duration % 60)}</span>
             </div>
             <div className='d-flex justify-content-center align-items-center'>
                 <TbPlayerTrackPrev className='playButton' onClick={playPrevSong} size={25} />

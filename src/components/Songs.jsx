@@ -14,11 +14,8 @@ function Songs(props) {
         props.setIsplaying(false)
         const pos = props.songsdata.map(e => e.url).indexOf(title.url);
         props.setCurrentSong(pos)
-        setIconControll(true)
+    
     }
-
-    const [iconControll, setIconControll] = useState(false)
-    const songRef = useRef()
 
 
     return (
@@ -26,8 +23,8 @@ function Songs(props) {
             {
                 props.songsdata.map((item, i) => {
                     return (
-                        <div onClick={() => { selectSong(item, item.id) }} key={i} id='card' className=' d-flex m-3  ' >
-                            <div className='d-flex align-items-center p-2'>
+                        <div onClick={() => {selectSong(item)}} key={i} id='deneme' className=' d-flex m-3 ' >
+                            <div className='d-flex align-items-center p-2 songCard'>
                                 <FcMusic size={30} />
                             </div>
                             <div id='cards' className='d-flex align-items-center m-3'>

@@ -16,19 +16,16 @@ body,html {
 #player{
     font-size: 14px;
 }
-#card{
+#deneme{
     font-size: 10px;
     
    
 }
-#card:hover{
+#deneme:hover{
     opacity: 70%;
     cursor: pointer;
 }
 
-#cards:hover{
-    color: red;
-}
 
 #songHeader{
     font-size: 14px;
