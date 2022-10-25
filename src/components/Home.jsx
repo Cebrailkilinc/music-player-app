@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Home(props) {
+function Home(props) {   
     return (
         <div id='homePage' className='h-75'>
             <div className=' d-flex align-items-center justify-content-center' >
-                <img src='indir (1).jpg' />               
+                <img src={props.songPicture} />               
             </div>
             <span id='songHeader'>{props.songTitle}</span>
         </div>

@@ -20,21 +20,35 @@ function Player(props) {
 
     const playNextSong = () => {
         setCount(count + 1)
+        console.log("count değeri : "+count)
+        console.log("Array değeri : "+props.currentSong)
+        if ( props.currentSong + count >props.allSongs.length ) {
+            props.setCurrentSong(0)
+            setCount(0)
+        }
         if (props.currentSong + count < props.songsdata.length) {
             props.setSongUrl(props.songsdata[props.currentSong + count].url)
             console.log(props.songUrl)
+            props.setSongTitle(props.allSongs[props.currentSong + count].title)
+            props.setSongPicture(props.allSongs[props.currentSong + count].picture)
             playPause()
         } else {
-            console.log("sddf")
+            props.setCurrentSong(0)
+            setCount(0)
         }
     }
 
     const playPrevSong = () => {
         setCount(count + 1)
-        if (props.currentSong - count >= 0) {
-            props.setSongUrl(props.songsdata[props.currentSong - count].url)
-            console.log(props.songUrl)
+      
+        if ( props.currentSong - count < 0 ) {
+            props.setCurrentSong(props.allSongs.length)
+        }
+        console.log("Array değeri : "+props.currentSong)
+        if (props.currentSong - count >= 0 ) {            
+            props.setSongUrl(props.songsdata[props.currentSong - count].url)       
             props.setSongTitle(props.songsdata[props.currentSong - count].title)
+            props.setSongPicture(props.allSongs[props.currentSong - count].picture)
             playPause()
             console.log(props.currentSong - count)
         } else {
@@ -50,10 +64,8 @@ function Player(props) {
         }
     }, [props.isplaying])
 
-    useEffect(() => {
-        console.log(clickRef)
-        const audio = audioElement.current;
-        console.log(audioElement)
+    useEffect(() => {     
+        const audio = audioElement.current;   
         setInterval(() => {
             setDuration(audio.duration)
             setCurrentTime(Math.floor(audio.currentTime))
