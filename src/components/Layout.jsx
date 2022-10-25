@@ -58,7 +58,7 @@ function Layout() {
             </div>
             <div className='w-75 h-100'>
                 <Home songTitle={songTitle} songPicture={songPicture} items={items} />
-                <Player allSongs={allSongs} items={items} songPlaying={songPlaying} setSongPlaying={setSongPlaying} songsdata={songsdata} setSongTitle={setSongTitle} setIsplaying={setIsplaying} isplaying={isplaying} songUrl={songUrl} setSongUrl={setSongUrl} setCurrentSong={setCurrentSong} currentSong={currentSong} />
+                <Player songPicture={songPicture} setSongPicture={setSongPicture} allSongs={allSongs} items={items} songPlaying={songPlaying} setSongPlaying={setSongPlaying} songsdata={songsdata} setSongTitle={setSongTitle} setIsplaying={setIsplaying} isplaying={isplaying} songUrl={songUrl} setSongUrl={setSongUrl} setCurrentSong={setCurrentSong} currentSong={currentSong} />
             </div>
         </div>
     )

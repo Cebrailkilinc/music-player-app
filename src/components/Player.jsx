@@ -18,10 +18,11 @@ function Player(props) {
         props.setIsplaying(!props.isplaying)
     }
 
+  
+
     const playNextSong = () => {
-        setCount(count + 1)
-        console.log("count değeri : "+count)
-        console.log("Array değeri : "+props.currentSong)
+        playPause()
+        setCount(count + 1)     
         if ( props.currentSong + count >props.allSongs.length ) {
             props.setCurrentSong(0)
             setCount(0)
@@ -36,9 +37,11 @@ function Player(props) {
             props.setCurrentSong(0)
             setCount(0)
         }
+        console.log(props.songPicture)
     }
 
     const playPrevSong = () => {
+        props.setIsplaying(false)
         setCount(count + 1)
       
         if ( props.currentSong - count < 0 ) {
